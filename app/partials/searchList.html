@@ -1,0 +1,19 @@
+
+<div>
+	Search File:<input ng-model="query">
+	OrderBy:<select ng-model="order">
+				<option value="documentName">Document Name</option>
+				<option value="documentId">Document Id</option>
+			</select>
+	
+		<fieldset>
+			<ul>
+				<li ng-repeat="document in docs | filter:query | orderBy:order">
+				<a ng-click="Details($index)">{{document.documentId}}</a><br>
+				<a ng-click="Details($index)">{{document.documentName}}</a></li>
+			</ul>
+		</fieldset>
+</div>
+<iframe src={{Preview}}></iframe>
+
+		
